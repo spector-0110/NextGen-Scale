@@ -85,39 +85,39 @@ export function ServiceCards() {
 
 export const projects = [
   {
-    title: "Stripe",
+    title: "Custom Website Design",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "We create fast, responsive, and SEO-optimized websites that convert visitors into customers.",
+    link: "/services/web-design", // Update to actual route if available
   },
   {
-    title: "Netflix",
+    title: "Social Media Management",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+      "End-to-end management of your social media profiles to grow followers and increase engagement.",
+    link: "/services/social-media", 
   },
   {
-    title: "Google",
+    title: "Brand Identity & Strategy",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+      "We craft a strong digital brand presence with compelling visuals and messaging tailored to your audience.",
+    link: "/services/branding", 
   },
   {
-    title: "Meta",
+    title: "Content Creation",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+      "Professional content—graphics, videos, and copywriting—for consistent and captivating online presence.",
+    link: "/services/content-creation", 
   },
   {
-    title: "Amazon",
+    title: "SEO & Google Ranking",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+      "Improve your visibility with our proven SEO techniques to rank higher on Google and drive organic traffic.",
+    link: "/services/seo", 
   },
   {
-    title: "Microsoft",
+    title: "Ad Campaigns (Meta & Google)",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
+      "Targeted ad campaigns that generate leads and boost sales using Meta Ads and Google Ads.",
+    link: "/services/ads", 
   },
 ];
