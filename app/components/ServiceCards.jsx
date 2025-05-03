@@ -94,30 +94,30 @@ export const projects = [
     title: "Social Media Management",
     description:
       "End-to-end management of your social media profiles to grow followers and increase engagement.",
-    link: "/services/social-media", 
+    // link: "/services/social-media", 
   },
   {
     title: "Brand Identity & Strategy",
     description:
       "We craft a strong digital brand presence with compelling visuals and messaging tailored to your audience.",
-    link: "/services/branding", 
+    // link: "/services/branding", 
   },
   {
     title: "Content Creation",
     description:
       "Professional content—graphics, videos, and copywriting—for consistent and captivating online presence.",
-    link: "/services/content-creation", 
+    // link: "/services/content-creation", 
   },
   {
     title: "SEO & Google Ranking",
     description:
       "Improve your visibility with our proven SEO techniques to rank higher on Google and drive organic traffic.",
-    link: "/services/seo", 
+    // link: "/services/seo", 
   },
   {
     title: "Ad Campaigns (Meta & Google)",
     description:
       "Targeted ad campaigns that generate leads and boost sales using Meta Ads and Google Ads.",
-    link: "/services/ads", 
+    // link: "/services/ads", 
   },
 ];

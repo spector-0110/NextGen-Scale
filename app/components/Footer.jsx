@@ -38,9 +38,9 @@ const Footer = () => {
           <div className="space-y-1">
             <h4 className="font-semibold text-gray-700 dark:text-neutral-200">Quick Links</h4>
             <ul className="space-y-1">
-              <li><Link href="#home" className="hover:underline">Home</Link></li>
-              <li><Link href="#services" className="hover:underline">Services</Link></li>
-              <li><Link href="#contact" className="hover:underline">Contact</Link></li>
+              <li><Link href="/services" className="hover:underline">Services</Link></li>
+              <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+              <li><Link href="/about" className="hover:underline">About Us</Link></li>
             </ul>
           </div>
 
