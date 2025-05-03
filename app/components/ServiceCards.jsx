@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from "react";
-import { HoverEffect } from "@/app/components/ui/CardComp";
+import { HoverEffect } from "@/app/components/ui/card/HoverEffect";
 import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
