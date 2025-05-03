@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         </Header>
 
         <ProcessTimeLine/>
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Footer />  
 
         {children}

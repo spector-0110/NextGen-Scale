@@ -1,11 +1,23 @@
-"use client"
+"use client";
+import { useState, useRef ,useEffect} from "react";
+import { motion } from "framer-motion";
+import { SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/solid";
 
-import { motion } from "motion/react"
+export function Hero({ children }) {
+  const [muted, setMute] = useState(true);
+  const videoRef = useRef(null);
 
-export function Hero({children}) {
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = muted;
+    }
+  }, [muted]);
+
+  const toggleMute = () => setMute((prev) => !prev);
+
   return (
     <div className="relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
-      {/* Vertical lines */}
+      {/* Decorative lines */}
       <div className="absolute inset-y-0 left-0 h-full w-px bg-[var(--muted)]/80">
         <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-[var(--accent)] to-transparent" />
       </div>
@@ -52,29 +64,43 @@ export function Hero({children}) {
           transition={{ duration: 0.3, delay: 1 }}
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          {/* Buttons or CTA could go here */}
+          {/* CTA Buttons */}
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 1.2 }}
-          className="relative z-10 mt-20 rounded-3xl border border-[var(--muted)] bg-[var(--background)] p-4 shadow-md"
-        >
-          <div className="w-full overflow-hidden rounded-xl border border-[var(--muted)]">
-            <img
-              src="NextGenScale.png"
-              alt="Digital marketing dashboard preview"
-              className="aspect-[16/9] h-auto w-full object-cover"
-              height={1000}
-              width={1000}
-            />
-          </div>
-        </motion.div>
-        
-        {children}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 1.2 }}
+        className="relative z-10 mt-20 rounded-3xl border border-[var(--muted)] bg-[var(--background)] p-4 shadow-md"
+      >
+        <div className="relative w-full overflow-hidden rounded-xl border border-[var(--muted)]">
+          <video
+            ref={videoRef}
+            src="/heroVideo.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="aspect-[16/9] h-auto w-full object-cover"
+            height={1000}
+            width={1000}
+          />
+          <button
+            onClick={toggleMute}
+            className="absolute bottom-4 right-4 z-20 flex items-center justify-center rounded-full bg-white/80 p-2 text-black backdrop-blur hover:bg-white dark:bg-black/60 dark:text-white dark:hover:bg-black transition"
+            aria-label={muted ? "Unmute video" : "Mute video"}
+          >
+            {muted ? (
+              <SpeakerXMarkIcon className="h-6 w-6" />
+            ) : (
+              <SpeakerWaveIcon className="h-6 w-6" />
+            )}
+          </button>
+        </div>
+      </motion.div>
 
+        {children}
       </div>
     </div>
-  )
+  );
 }
