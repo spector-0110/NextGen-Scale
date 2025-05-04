@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         {/* Brand Section */}
         <div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 hover:cursor-pointer">
           <Link href="/" className="block">
             <img
                 src="/NextGen.png" 
@@ -26,32 +26,37 @@ const Footer = () => {
                 <span className="text-lg font-bold text-[#FDE047]">Scale</span>
 
           </div>
-          <p className="mt-2 text-sm text-gray-500 dark:text-neutral-400">
+          {/* <p className="mt-2 text-sm text-gray-500 dark:text-neutral-400">
             A product by <a href="#" className="text-blue-500 hover:underline">NextGen Scale</a><br />
             Building in public at <a href="https://twitter.com/VatsaAditya1" className="text-blue-500 hover:underline">@VatsaAditya</a>
-          </p>
+          </p> */}
+        </div>
+
+        <div className="text-sm text-gray-500 dark:text-neutral-400 space-y-4 md:text-right w-full md:w-auto">
+        <div className="space-y-1">
+            <h4 className="font-semibold text-gray-700 dark:text-neutral-200">Quick Links</h4>
+              <ul className="space-y-1">
+                <li className="hover:text-[#FFCF06] hover:cursor-pointer"> 
+                  <button onClick={() => useScrollToSection("services")}>Services</button>
+                </li>
+                <li className="hover:text-[#FFCF06] hover:cursor-pointer">
+                  <button onClick={() => useScrollToSection("process")}>Process</button>
+                </li>
+                  {/* <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+                  <li><Link href="/about" className="hover:underline">About Us</Link></li> */}
+              </ul>
+          </div>
         </div>
 
         {/* Info & Links */}
         <div className="text-sm text-gray-500 dark:text-neutral-400 space-y-4 md:text-right w-full md:w-auto">
-          {/* Navigation */}
-          <div className="space-y-1">
-            <h4 className="font-semibold text-gray-700 dark:text-neutral-200">Quick Links</h4>
-            <ul className="space-y-1">
-            <li>
-              <button onClick={() => useScrollToSection("services")}>Services</button>
-            </li>
-              {/* <li><Link href="/contact" className="hover:underline">Contact</Link></li>
-              <li><Link href="/about" className="hover:underline">About Us</Link></li> */}
-            </ul>
-          </div>
 
           {/* Contact */}
                 <div>
                 <h4 className="font-semibold text-gray-700 dark:text-neutral-200">Contact</h4>
                 <p>
                   Lucknow, India<br />
-                  <a href="mailto:Infonextgenscale@gmail.com" className="hover:text-[#FFCF06]">
+                  <a href="mailto:Infonextgenscale@gmail.com" className="hover:text-[#FFCF06] hover:cursor-pointer">
                   Infonextgenscale@gmail.com.com
                   </a>
                 </p>
@@ -72,7 +77,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="pt-4 text-xs text-gray-400">
-            © {new Date().getFullYear()} YourBrand. All rights reserved.
+            © {new Date().getFullYear()} NextGen Scale. All rights reserved.
           </p>
         </div>
       </div>
