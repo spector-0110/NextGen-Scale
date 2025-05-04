@@ -9,7 +9,7 @@ const stats = [
     { label: 'Avg ROI Increase', value: 4, suffix: 'x' },
   ];
 
-export function QuickStats() {
+export default function QuickStats() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 1.0 });
 
   return (

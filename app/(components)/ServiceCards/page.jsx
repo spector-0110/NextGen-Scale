@@ -1,18 +1,19 @@
 'use client';
 
 import { useEffect, useRef } from "react";
-import { HoverEffect } from "@/app/components/ui/card/HoverEffect";
+import { HoverEffect } from "@/app/(components)/ui/card/HoverEffect";
 import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export function ServiceCards() {
+export default function ServiceCards() {
   const containerRef = useRef(null);
   const cardsRef = useRef(null);
   const isInView = useInView(containerRef, { amount: 0.5, once: false });
   
   useEffect(() => {
     // Register ScrollTrigger plugin
+    
     gsap.registerPlugin(ScrollTrigger);
     
     const container = containerRef.current;
@@ -63,19 +64,24 @@ export function ServiceCards() {
   }, []);
   
   return (
-    <div 
+    <div
       ref={containerRef}
-      className="w-full h-screen overflow-hidden bg-white dark:bg-[#0b0c10] transition-colors duration-300"
-      >
-      <motion.div
-        ref={cardsRef}
-        className="h-full flex items-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isInView ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      className="w-full min-h-[60vh] md:h-50vh overflow-hidden bg-white dark:bg-[#0b0c10] transition-colors duration-300 py-8 md:py-12"
+    >
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold px-4 mt-4 mb-8 md:mb-12 text-[var(--accent-color)] text-center">
+            OUR SERVICES
+        </h2>
 
-        <div className="max-w-5xl mx-auto px-8"> 
+        <motion.div
+          ref={cardsRef}
+          className="h-full w-full flex flex-col items-center justify-center px-4 md:px-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isInView ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+        
+          {/* Project Cards */}
+        <div className="w-full max-w-[95%] md:max-w-5xl mx-auto py-5">
           <HoverEffect items={projects} />
         </div>
       </motion.div>
@@ -88,7 +94,7 @@ export const projects = [
     title: "Custom Website Design",
     description:
       "We create fast, responsive, and SEO-optimized websites that convert visitors into customers.",
-    link: "/services/web-design", // Update to actual route if available
+    // link: "/services/web-design", // Update to actual route if available
   },
   {
     title: "Social Media Management",

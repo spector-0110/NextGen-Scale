@@ -3,7 +3,7 @@ import { useState, useRef ,useEffect} from "react";
 import { motion } from "framer-motion";
 import { SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/solid";
 
-export function Hero({ children }) {
+export default function Hero({ children }) {
   const [muted, setMute] = useState(true);
   const videoRef = useRef(null);
 
@@ -16,7 +16,8 @@ export function Hero({ children }) {
   const toggleMute = () => setMute((prev) => !prev);
 
   return (
-    <div className="relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
+    
+      <div className="relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center bg-background  dark:bg-background-dark ">
       {/* Decorative lines */}
       <div className="absolute inset-y-0 left-0 h-full w-px bg-[var(--muted)]/80">
         <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-[var(--accent)] to-transparent" />

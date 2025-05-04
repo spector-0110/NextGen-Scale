@@ -1,7 +1,7 @@
 import React from "react";
-import { Timeline } from "@/app/components/ui/TimeLine";
+import { Timeline } from "@/app/(components)/ui/TimeLine";
 
-export function ProcessTimeLine() {
+export default function ProcessTimeLine() {
 
   const data = [
     {

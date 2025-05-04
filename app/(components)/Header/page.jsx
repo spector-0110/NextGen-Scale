@@ -10,10 +10,10 @@ import {
     MobileNavHeader,
     MobileNavToggle,
     MobileNavMenu,
-  } from "@/app/components/ui/navbar/index";
+  } from "@/app/(components)/ui/navbar/index";
 import { useState } from "react";
 
-export function Header({children}) {
+export default function Header({children}) {
   const navItems = [
     {
       name: "services",
