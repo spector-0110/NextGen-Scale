@@ -4,7 +4,7 @@ import QuickStats from "@/components/QuickStats/page";
 import ServiceCards from "@/components/ServiceCards/page";
 import ProcessTimeLine from "@/components/ProcessTimeLine/page";
 import PartnerMarquee from "@/components/PartnerMarquee/page";
-import FormPage from "@/components/Form/page";
+import FormPage from "@/components/form/page";
 
 export default function HomePage() {
     return (
