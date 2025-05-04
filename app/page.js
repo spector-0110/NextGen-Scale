@@ -17,9 +17,9 @@ export default function HomePage() {
           <QuickStats />
         </section>
   
-        {/* <section id="partners">
+        <section id="partners">
           <PartnerMarquee />
-        </section> */}
+        </section>
   
        <section id="services">
           <ServiceCards />

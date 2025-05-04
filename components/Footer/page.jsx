@@ -47,15 +47,17 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-semibold text-gray-700 dark:text-neutral-200">Contact</h4>
-            <p>
-              Lucknow, India<br />
-              nextgenscale01@gmail.com
-            </p>
-          </div>
+                <div>
+                <h4 className="font-semibold text-gray-700 dark:text-neutral-200">Contact</h4>
+                <p>
+                  Lucknow, India<br />
+                  <a href="mailto:Infonextgenscale@gmail.com" className="hover:text-[#FFCF06]">
+                  Infonextgenscale@gmail.com.com
+                  </a>
+                </p>
+                </div>
 
-          {/* Social */}
+                {/* Social */}
           <div className="flex justify-start md:justify-end space-x-4 pt-2">
             <a href="https://twitter.com" target="_blank" rel="https://twitter.com/VatsaAditya1">
               <IconBrandTwitter className="w-5 h-5 hover:text-blue-400" />

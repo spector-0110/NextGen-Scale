@@ -1,86 +1,92 @@
-"use client";
-
-import { cn } from "@/app/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export const InfiniteMovingCards = ({
   items,
-  direction = "left",
   speed = "fast",
+  direction = "left",
   pauseOnHover = true,
-  className
+  className = ""
 }) => {
-  const containerRef = React.useRef(null);
-  const scrollerRef = React.useRef(null);
+  const containerRef = useRef(null);
 
+  const animationDuration =
+    speed === "fast" ? 20 : speed === "normal" ? 40 : 80; // in seconds
+
+  const animationName = direction === "right" ? "marqueeRight" : "marqueeLeft";
+
+  // Inject keyframes into document
   useEffect(() => {
-    addAnimation();
+    const styleSheet = document.styleSheets[0];
+
+    const keyframesLeft = `
+      @keyframes marqueeLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    `;
+    const keyframesRight = `
+      @keyframes marqueeRight {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+      }
+    `;
+
+    // Prevent duplicates
+    if (![...styleSheet.cssRules].some(rule => rule.name === "marqueeLeft")) {
+      styleSheet.insertRule(keyframesLeft, styleSheet.cssRules.length);
+    }
+    if (![...styleSheet.cssRules].some(rule => rule.name === "marqueeRight")) {
+      styleSheet.insertRule(keyframesRight, styleSheet.cssRules.length);
+    }
   }, []);
-  const [start, setStart] = useState(false);
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
+  const animationStyle = {
+    display: "flex",
+    width: "max-content",
+    gap: "3rem",
+    animation: `${animationName} ${animationDuration}s linear infinite`,
+    willChange: "transform",
+    ...(pauseOnHover
+      ? {
+          pointerEvents: "auto",
         }
-      });
+      : {})
+  };
 
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty("--animation-direction", "forwards");
-      } else {
-        containerRef.current.style.setProperty("--animation-direction", "reverse");
-      }
-    }
-  };
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
-    }
-  };
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className
-      )}>
-      <ul
-        ref={scrollerRef}
-        className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
-          start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}>
-        <div
-          className="flex gap-12 w-max"
-          style={{ willChange: "transform" }}
-        >
-          {[...items, ...items].map((partner, index) => (
-            <img
-              key={index}
-              src={partner.logo}
-              alt={partner.name}
-              className="h-12 md:h-16"
-            />
-          ))}
-        </div>
-      </ul>
+      className={className}
+      style={{
+        overflow: "hidden",
+        width: "100%",
+        position: "relative",
+      }}
+    >
+      <div
+        style={{
+          ...animationStyle,
+        }}
+        // onMouseEnter={(e) =>
+        //   pauseOnHover && (e.currentTarget.style.animationPlayState = "paused")
+        // }
+        onMouseLeave={(e) =>
+          pauseOnHover && (e.currentTarget.style.animationPlayState = "running")
+        }
+      >
+        {[...items, ...items].map((partner, index) => (
+          <img
+            key={index}
+            src={partner.logo}
+            alt={partner.name}
+            style={{
+              height: "3rem",
+              objectFit: "contain",
+              flexShrink: 0,
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };

@@ -26,7 +26,7 @@ export default function Header({children}) {
     },
     {
       name: "About Us",
-      link: "#services",
+      link: "#footer",
     },
   ];
 

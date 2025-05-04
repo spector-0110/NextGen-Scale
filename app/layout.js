@@ -27,8 +27,11 @@ export default function ComponentLayout({ children }) {
       >
         <Header>
           {children}
-         </Header> 
-        <Footer />  
+        </Header>
+        <section id="footer">
+          <Footer />  
+        </section> 
+        
       </body>
     </html>
   );
