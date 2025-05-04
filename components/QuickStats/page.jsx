@@ -3,9 +3,9 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 
 const stats = [
-    { label: 'Brands Scaled', value: 500, suffix: '+' },
-    { label: 'Campaigns Launched', value: 1200, suffix: '+' },
-    { label: 'Clients Served', value: 300, suffix: '+' },
+    { label: 'Brands Scaled', value: 5, suffix: '+' },
+    { label: 'Campaigns Launched', value: 450, suffix: '+' },
+    { label: 'Clients Served', value: 2, suffix: '+' },
     { label: 'Avg ROI Increase', value: 4, suffix: 'x' },
   ];
 

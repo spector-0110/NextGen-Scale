@@ -26,18 +26,18 @@ const partners = [
     link: "",
   },
   {
-    name: "Meta",
+    name: "Genesis",
+    logo: "/Fixit.svg",
+    link: "",
+  },
+  {
+    name: "Genesis",
+    logo: "https://momsera.in/cdn/shop/files/Purple_Modern_Mom_and_Baby_Logo_3.png?v=1738409638&width=170",
+    link: "",
+  },
+  {
+    name: "Inrest",
     logo: "https://www.inrext.com/images/Inrext-logo-web.png.webp",
-    link: "https://www.meta.com",
-  },
-  {
-    name: "Adobe",
-    logo: "https://socialoffline.in/cdn/uploads/social-logo.png",
-    link: "https://www.adobe.com",
-  },
-  {
-    name: "Shopify",
-    logo: "https://www.thebeergardenindia.com/images/logo.png",
-    link: "https://www.shopify.com",
+    link: "https://www.inrext.com",
   },
 ];
