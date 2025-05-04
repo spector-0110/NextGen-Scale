@@ -1,14 +1,9 @@
+// app/(component)/layout.js
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "./(components)/Header/page";
-import  Hero  from "./(components)/Hero/page";
-import  QuickStats  from "./(components)/QuickStats/page";
-import  ServiceCards  from "./(components)/ServiceCards/page";
-import  ProcessTimeLine  from "./(components)/ProcessTimeLine/page";
-// import  Testimonials  from "./components/Testimonials/page";
-import Footer from "./(components)/Footer/page";
-import  PartnerMarquee  from "./(components)/PartnerMarquee/page";
-import ComponentLayout from "./(components)/layout";
+import "@/app/globals.css";
+import Header from "../components/Header/page";
+import Footer from "../components/Footer/page";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,18 +19,17 @@ export const metadata = {
   description: "Its the website for NextGen Scale",
 };
 
-export default function RootLayout({ children }) {
+export default function ComponentLayout({ children }) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background dark:bg-background-dark`} 
       >
-        
-        <ComponentLayout />
-        {children}
-
+        <Header>
+          {children}
+         </Header> 
+        <Footer />  
       </body>
-      
     </html>
   );
 }

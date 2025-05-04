@@ -2,7 +2,7 @@
 
 import { cn } from "@/app/lib/utils";
 import { motion } from "framer-motion";
-import { Card, CardDescription, CardTitle } from "@/app/(components)/ui/card";
+import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 export const HoverEffect = ({ items, className }) => {
   return (

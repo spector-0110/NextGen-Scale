@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { InfiniteMovingCards } from "@/app/(components)/ui/InfiniteMovingCard";
+import { InfiniteMovingCards } from "@/components/ui/InfiniteMovingCard";
 
 export default function PartnerMarquee() {
   return (

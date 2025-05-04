@@ -1,5 +1,5 @@
 import React from "react";
-import { Timeline } from "@/app/(components)/ui/TimeLine";
+import { Timeline } from "@/components/ui/TimeLine";
 
 export default function ProcessTimeLine() {
 

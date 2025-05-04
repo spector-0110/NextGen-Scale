@@ -10,22 +10,22 @@ import {
     MobileNavHeader,
     MobileNavToggle,
     MobileNavMenu,
-  } from "@/app/(components)/ui/navbar/index";
+  } from "@/components/ui/navbar/index";
 import { useState } from "react";
 
 export default function Header({children}) {
   const navItems = [
     {
       name: "services",
-      link: "#features",
+      link: "#services",
     },
     {
-      name: "Contact",
-      link: "#contact",
+      name: "Process",
+      link: "#process",
     },
     {
       name: "About Us",
-      link: "#about",
+      link: "#services",
     },
   ];
 
@@ -39,12 +39,12 @@ export default function Header({children}) {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            <NavbarButton variant="primary" href="#form">Book a call</NavbarButton>
           </div>
         </NavBody>
 
         {/* Mobile Navigation */}
-        <MobileNav>
+        <MobileNav >
           <MobileNavHeader>
             <NavbarLogo />
             <MobileNavToggle

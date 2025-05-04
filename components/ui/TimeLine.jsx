@@ -27,7 +27,7 @@ export const Timeline = ({ data }) => {
       className="w-full bg-background  dark:bg-background-dark font-sans md:px-10 py-10"
       ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex justify-center items-center">
-        <h2 className="text-2xl md:text-6xl mb-4 text-foreground dark:text-white font-extrabold text-center">
+        <h2 className="text-2xl md:text-6xl mb-4 mt-10 text-foreground dark:text-white font-extrabold text-center">
            <span className="text-[var(--accent-color)]">From Spark</span> to <span className="text-[var(--accent-color)]">Story</span>
         </h2>
       </div>
