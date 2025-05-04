@@ -9,3 +9,4 @@ export { MobileNavMenu } from './MobileNavMenu';
 export { MobileNavToggle } from './MobileNavToggle';
 export { NavbarLogo } from './NavbarLogo';
 export { NavbarButton } from './NavbarButton';
+export { MobileNavItems } from './MobileNavItems';

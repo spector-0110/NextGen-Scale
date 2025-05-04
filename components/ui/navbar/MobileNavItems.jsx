@@ -1,36 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
-import { cn } from "@/app/lib/utils";
+import React , {useState} from "react";
+import { NavbarButton } from "./NavbarButton";
 import { motion } from "motion/react";
-import Link from "next/link";
+import { cn } from "@/app/lib/utils";
 
-export const NavItems = ({
+export const MobileNavItems = ({
   items,
   className,
   onItemClick,
 }) => {
-  const [hovered, setHovered] = useState(null);
-
-  const handleScroll = (e, link) => {
-    if (link.startsWith("#")) {
-      e.preventDefault();
-      const el = document.querySelector(link);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+    const [hovered, setHovered] = useState(null);
+    const handleScroll = (e, link) => {
+      if (link.startsWith("#")) {
+        e.preventDefault();
+        const el = document.querySelector(link);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+        if (onItemClick) onItemClick();
       }
-      if (onItemClick) onItemClick();
-    }
-  };
+    };
+
 
   return (
-    <motion.div
-      onMouseLeave={() => setHovered(null)}
-      className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition duration-200 lg:flex lg:space-x-2",
-        className
-      )}
-    >
+    <>
       {items.map((item, idx) => {
         const isInternalAnchor = item.link.startsWith("#");
 
@@ -52,7 +46,7 @@ export const NavItems = ({
 
         return (
           <motion.div
-            key={`item-wrapper-${idx}`}
+            key={`mobile-link-${idx}`}
             whileHover={{ y: -0.5 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
           >
@@ -65,20 +59,30 @@ export const NavItems = ({
                 {content}
               </button>
             ) : (
-              <Link
+              <a
                 onMouseEnter={() => setHovered(idx)}
                 onClick={onItemClick}
                 href={item.link}
                 className={sharedClasses}
               >
                 {content}
-              </Link>
+              </a>
             )}
           </motion.div>
         );
       })}
-    </motion.div>
+
+      <div className="flex w-full flex-col gap-4">
+        <NavbarButton
+          href="#form"
+          onClick={onItemClick}
+          variant="primary"
+          className="w-full">
+          Book a call
+        </NavbarButton>
+      </div>
+    </>
   );
 };
 
-export default NavItems;
+export default MobileNavItems;

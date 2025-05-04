@@ -17,11 +17,11 @@ export default function HomePage() {
           <QuickStats />
         </section>
   
-        <section id="partners">
+        {/* <section id="partners">
           <PartnerMarquee />
-        </section>
+        </section> */}
   
-        <section id="services">
+       <section id="services">
           <ServiceCards />
         </section>
   
@@ -31,6 +31,8 @@ export default function HomePage() {
         <section id="form">
           <FormPage /> 
         </section>         
+        
       </>
+
     );
   }

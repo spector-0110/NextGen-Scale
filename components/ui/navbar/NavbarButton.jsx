@@ -10,6 +10,7 @@ export const NavbarButton = ({
   children,
   className,
   variant = "primary",
+  onClick,
   ...props
 }) => {
   const pathname = usePathname();
@@ -17,10 +18,14 @@ export const NavbarButton = ({
   const sectionId = href?.replace("#", "");
 
   const handleClick = (e) => {
+    if (onClick) {
+      onClick(e);
+    }
+    
     if (isAnchorLink && pathname === "/") {
+      e.preventDefault();
       const section = document.getElementById(sectionId);
       if (section) {
-        e.preventDefault();
         section.scrollIntoView({ behavior: "smooth" });
       }
     }
@@ -48,18 +53,15 @@ export const NavbarButton = ({
 
   const combinedClass = cn(baseStyles, glowingBorder, variantStyles[variant], className);
 
-  if (isAnchorLink) {
-    return (
-      <button onClick={handleClick} className={combinedClass} {...props}>
-        {children}
-      </button>
-    );
-  }
-
-  return (
-    <Tag href={href} className={combinedClass} {...props}>
-      {children}
-    </Tag>
+  return React.createElement(
+    isAnchorLink ? 'button' : Tag,
+    {
+      ...(isAnchorLink ? {} : { href }),
+      className: combinedClass,
+      onClick: handleClick,
+      ...props
+    },
+    children
   );
 };
 
