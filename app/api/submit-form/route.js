@@ -7,6 +7,9 @@ export async function POST(request) {
     const body = await request.json();
     const { brandName, phone, email, location } = body;
     console.log('Received form data:', body);
+    console.log('Client email:', process.env.GOOGLE_CLIENT_EMAIL);
+    console.log('Private key exists:', !!process.env.GOOGLE_PRIVATE_KEY);
+// Don't log the full private key for security reasons
 
     const sheets = await getGoogleSheetsAuth();
     
