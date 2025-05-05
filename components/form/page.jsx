@@ -118,7 +118,7 @@ export default function FormPage() {
                 <Input
                   id="email"
                   name="email"
-                  placeholder="BrandEmail@gmail.com"
+                  placeholder="Email address"
                   type="email"
                   required
                   disabled={isSubmitting}

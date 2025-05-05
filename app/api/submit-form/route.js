@@ -7,19 +7,24 @@ export async function POST(request) {
     const body = await request.json();
     const { brandName, phone, email, location } = body;
     console.log('Received form data:', body);
-    console.log('Client email:', process.env.GOOGLE_CLIENT_EMAIL);
-    console.log('Private key exists:', process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'));
-// Don't log the full private key for security reasons
 
+    const indianTime = new Date().toLocaleString('en-US', { 
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
     const sheets = await getGoogleSheetsAuth();
     
-    // Add row to Google Sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Sheet1!A:D',
+      range: 'Sheet1!A:E',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[brandName, phone, email, location]],
+        values: [[brandName, phone, email, location, indianTime]],
       },
     });
 
