@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "NextGen Scale",
-  description: "Its the website for NextGen Scale",
+  description: "NextGen Scale is a digital marketing agency that specializes in helping brands grow and scale their online presence. We offer a range of services including SEO, PPC, social media marketing, and more.",
 };
 
 export default function ComponentLayout({ children }) {
