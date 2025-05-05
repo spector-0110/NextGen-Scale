@@ -11,12 +11,12 @@ export default function FormPage() {
   };
   return (
     <div className="flex flex-col md:flex-row w-full min-h-[600px]">
-        <div className="w-full md:w-[45%] p-8 flex items-center justify-center bg-background dark:bg-background-dark font-sans text-white min-h-full">
+        <div className="w-full md:w-[45%] p-8 flex items-center justify-center bg-background dark:bg-background-dark font-sans text-black dark:text-white min-h-full">
         <div className="max-w-md text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">
             Transform Your Vision Into Reality
             </h2>
-            <p className="text-xl md:text-2xl text-neutral-300 dark:text-neutral-400">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-neutral-400">
             Partner with NextGen Scale to elevate your brand and unlock unprecedented growth opportunities.
             </p>
         </div>
@@ -27,7 +27,7 @@ export default function FormPage() {
                 <form className="my-8" onSubmit={handleSubmit}>
                     <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
                         <LabelInputContainer>
-                        <Label htmlFor="firstname">Name of the brand:</Label>
+                        <Label htmlFor="firstname" className="text-black dark:text-white">Name of the brand:</Label>
                         <Input
                             id="Name"
                             placeholder="NextGen Scale"
@@ -36,7 +36,7 @@ export default function FormPage() {
                         />
                         </LabelInputContainer>
                         <LabelInputContainer>
-                        <Label htmlFor="PhoneNumber">Phone</Label>
+                        <Label htmlFor="PhoneNumber" className="text-black dark:text-white">Phone</Label>
                         <Input
                             id="PhoneNumber"
                             placeholder="Number"
@@ -49,7 +49,7 @@ export default function FormPage() {
                     </div>
 
                     <LabelInputContainer className="mb-4">
-                        <Label htmlFor="email">Email Address</Label>
+                        <Label htmlFor="email" className="text-black dark:text-white">Email Address</Label>
                         <Input
                         id="email"
                         placeholder="BrandEmail@gmail.com"
@@ -58,7 +58,7 @@ export default function FormPage() {
                         />
                     </LabelInputContainer>
                     <LabelInputContainer className="mb-4">
-                        <Label htmlFor="Location">Location</Label>
+                        <Label htmlFor="Location" className="text-black dark:text-white">Location</Label>
                         <Input
                         id="Location"
                         placeholder="Location"

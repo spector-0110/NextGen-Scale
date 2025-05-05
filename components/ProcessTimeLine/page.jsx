@@ -5,12 +5,12 @@ export default function ProcessTimeLine() {
 
   const data = [
     {
-      title: "Discovery Download",
+      title: "Understand & Align",
       content: (
         <div>
           <p
             className="mb-8 text-xs font-medium text-neutral-800 md:text-sm dark:text-neutral-200">
-            We get inside your brand’s head. An open conversation where we unpack your story, goals, and pain points — think of it as brand therapy, but with a game plan at the end.
+              We listen first. Every business has a unique story, and we start by understanding yours. In a simple, no-jargon conversation, we dig into your challenges, goals, and what makes your brand tick. This helps us align our strategy with your vision from day one.          
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
@@ -43,12 +43,12 @@ export default function ProcessTimeLine() {
     },
 
     {
-      title: "Strategy Alchemy",
+      title: "Strategy That Speaks",
       content: (
         <div>
           <p
             className="mb-8 text-xs font-medium text-neutral-800 md:text-sm dark:text-neutral-200">
-            Where insight meets intuition. We brew up a bold strategy that blends audience research, brand positioning, and creative direction into one seamless narrative.
+              No guesswork—only smart moves. Using competitor research, audience insights, and brand analysis, we craft a strategy tailored to your market. Whether it's local dominance or online growth, we plan your path forward with clarity and purpose.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
@@ -81,12 +81,12 @@ export default function ProcessTimeLine() {
     },
 
     {
-      title: "Engine Ignites",
+      title: "Creative in Action",
       content: (
         <div>
           <p
             className="mb-8 text-xs font-medium text-neutral-800 md:text-sm dark:text-neutral-200">
-            Lights on. Ideas in motion. We move from concepts to execution—designing visuals, crafting content, and building assets that people pause for, not pass by.
+            Ideas come to life. Our team gets to work on designing eye-catching visuals, writing engaging content, and setting up campaigns across platforms. Everything is built to connect, convert, and communicate your brand clearly.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
@@ -119,13 +119,13 @@ export default function ProcessTimeLine() {
     },
 
     {
-      title: "Launch & Learn",
+      title: "Launch, Track, Improve",
       content: (
         <div>
           <p
             className="mb-8 text-xs font-medium text-neutral-800 md:text-sm dark:text-neutral-200">
-              Going live is just the beginning.
-              We deploy your content, monitor performance, and refine what works. Growth isn’t luck — it’s iteration done right.          </p>
+              We don’t just launch and leave. Once your campaigns go live, we closely monitor performance. We tweak, test, and improve to ensure consistent growth — because real results come from continuous refinement.
+          </p>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://assets.aceternity.com/pro/hero-sections.png"

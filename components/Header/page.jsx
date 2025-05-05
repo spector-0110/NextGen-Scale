@@ -17,16 +17,16 @@ import { useState } from "react";
 export default function Header({children}) {
   const navItems = [
     {
-      name: "services",
+      name: "About Us",
+      link: "#footer",
+    },
+    {
+      name: "Services",
       link: "#services",
     },
     {
-      name: "Process",
+      name: "How we work",
       link: "#process",
-    },
-    {
-      name: "About Us",
-      link: "#footer",
     },
   ];
 
